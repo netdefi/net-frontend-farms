@@ -16,11 +16,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.netdefi.com/',
+        href: 'https://master.d7oo7a0o9fxw3.amplifyapp.com/',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.netdefi.com/#/pool',
+        href: 'https://master.d7oo7a0o9fxw3.amplifyapp.com/#/pool',
       },
     ],
   },
