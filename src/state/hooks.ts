@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js'
-import { useEffect, useMemo } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import useRefresh from 'hooks/useRefresh'
-import { fetchFarmsPublicDataAsync, fetchPoolsPublicDataAsync, fetchPoolsUserDataAsync } from './actions'
-import { State, Farm, Pool } from './types'
+import { fetchFarmsPublicDataAsync, fetchPoolsUserDataAsync, fetchReferralDataAsync } from './actions'
+import { State, Farm, Pool, Referral } from './types'
 import { QuoteToken } from '../config/constants/types'
 
 const ZERO = new BigNumber(0)
@@ -12,6 +12,7 @@ export const useFetchPublicData = () => {
   const dispatch = useDispatch()
   const { slowRefresh } = useRefresh()
   useEffect(() => {
+
     dispatch(fetchFarmsPublicDataAsync())
     // dispatch(fetchPoolsPublicDataAsync())
   }, [dispatch, slowRefresh])
@@ -45,6 +46,20 @@ export const useFarmUser = (pid) => {
   }
 }
 
+// Referral
+
+export const useReferrals = (account): Referral => {
+  const { fastRefresh } = useRefresh()
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (account) {
+      dispatch(fetchReferralDataAsync(account))
+    }
+  }, [account, dispatch, fastRefresh])
+
+  const referral = useSelector((state: State) => state.referral.data)
+  return referral
+}
 
 // Pools
 
@@ -69,9 +84,10 @@ export const usePoolFromPid = (sousId): Pool => {
 // Prices
 
 export const usePriceBnbBusd = (): BigNumber => {
-  const pid = 2 // BUSD-BNB LP
+  const pid = 1 // BUSD-BNB LP
   const farm = useFarmFromPid(pid)
-  return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO
+
+  return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
 }
 
 export const usePriceCakeBusd = (): BigNumber => {
@@ -79,10 +95,10 @@ export const usePriceCakeBusd = (): BigNumber => {
   // const bnbPriceUSD = usePriceBnbBusd()
   // const farm = useFarmFromPid(pid)
   // return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
-  const pid = 5; // EGG-BUSD LP
-  const farm = useFarmFromPid(pid);
 
-  return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
+  const pid = 0; // Net-BUSD LP
+  const farm = useFarmFromPid(pid);
+  return farm.tokenPriceVsQuote ? new BigNumber(1) : ZERO;
 }
 
 export const useTotalValue = (): BigNumber => {
@@ -97,9 +113,9 @@ export const useTotalValue = (): BigNumber => {
       let val;
       if (farm.quoteTokenSymbol === QuoteToken.BNB) {
         val = (bnbPrice.times(farm.lpTotalInQuoteToken));
-      }else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
+      } else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
         val = (cakePrice.times(farm.lpTotalInQuoteToken));
-      }else{
+      } else {
         val = (farm.lpTotalInQuoteToken);
       }
       value = value.plus(val);

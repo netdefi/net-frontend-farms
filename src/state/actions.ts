@@ -1,4 +1,5 @@
 export { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync } from './farms'
+export { fetchReferralDataAsync } from './Referral'
 export {
   fetchPoolsPublicDataAsync,
   fetchPoolsUserDataAsync,

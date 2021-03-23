@@ -81,7 +81,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://netdefi.gitbook.io/net-finance/',
+        href: 'https://netdefi-bsc.gitbook.io/docdefi/',
       },
       {
         label: 'Blog',

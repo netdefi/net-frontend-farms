@@ -75,7 +75,7 @@
     {
       "data": {
         "stringId": 304,
-        "text": "\u81ea\u53d1\u8d77\u4ee5\u6765\u7684 EGG \u603b\u711a\u6bc1\u91cf"
+        "text": "\u81ea\u53d1\u8d77\u4ee5\u6765\u7684 Net \u603b\u711a\u6bc1\u91cf"
       }
     },
     {
@@ -123,13 +123,13 @@
     {
       "data": {
         "stringId": 320,
-        "text": "\u8d28\u62bc LP \u4ee3\u5e01\u4ee5\u5806\u53e0 EGG"
+        "text": "\u8d28\u62bc LP \u4ee3\u5e01\u4ee5\u5806\u53e0 Net"
       }
     },
     {
       "data": {
         "stringId": 322,
-        "text": "\u8d28\u62bc EGG\uff0c\u83b7\u53d6 SYRUP\u3002"
+        "text": "\u8d28\u62bc Net\uff0c\u83b7\u53d6 SYRUP\u3002"
       }
     },
     {
@@ -153,7 +153,7 @@
     {
       "data": {
         "stringId": 334,
-        "text": "\u6bcf\u6b21\u60a8\u8d28\u62bc\u4e0e\u53d6\u6d88\u8d28\u62bc EGG \u4ee3\u5e01\u65f6\uff0c\u5408\u7ea6\u90fd\u4f1a\u81ea\u52a8\u4e3a\u60a8\u6536\u5272 EGG \u5956\u52b1\uff01"
+        "text": "\u6bcf\u6b21\u60a8\u8d28\u62bc\u4e0e\u53d6\u6d88\u8d28\u62bc Net \u4ee3\u5e01\u65f6\uff0c\u5408\u7ea6\u90fd\u4f1a\u81ea\u52a8\u4e3a\u60a8\u6536\u5272 Net \u5956\u52b1\uff01"
       }
     },
     {

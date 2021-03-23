@@ -7,6 +7,22 @@ export const approve = async (lpContract, masterChefContract, account) => {
     .send({ from: account })
 }
 
+export const registerRef = async (masterChefContract, refaddress, account) => {
+
+    // return masterChefContract.methods.parterInfo(refaddress)
+    // .send({ from: account })
+    // .on('partnerAddress', (tx) => {
+    //   return tx.partnerAddress
+    // })
+
+    return masterChefContract.methods
+    .registerPartner(refaddress)
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+
 export const stake = async (masterChefContract, pid, amount, account) => {
   return masterChefContract.methods
     .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())

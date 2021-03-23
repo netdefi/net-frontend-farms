@@ -9,6 +9,7 @@ import {
   fetchUserPendingRewards,
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
+// import {useReferralInfo} from "../../hooks/useReferral";
 
 const initialState: PoolsState = { data: [...poolsConfig] }
 
@@ -94,5 +95,6 @@ export const updateUserPendingReward = (sousId: string, account: string) => asyn
   const pendingRewards = await fetchUserPendingRewards(account)
   dispatch(updatePoolsUserData({ sousId, field: 'pendingReward', value: pendingRewards[sousId] }))
 }
+
 
 export default PoolsSlice.reducer

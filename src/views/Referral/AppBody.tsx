@@ -4,7 +4,8 @@ import { Card } from '@pancakeswap-libs/uikit'
 
 export const BodyWrapper = styled(Card)`
   position: relative;
-  max-width: 436px;
+  min-width: 360px;
+  max-width: 100%;
   width: 100%;
   z-index: 5;
 `
@@ -13,5 +14,5 @@ export const BodyWrapper = styled(Card)`
  * The styled container element that wraps the content of most pages and the tabs.
  */
 export default function AppBody({ children }: { children: React.ReactNode }) {
-    return <BodyWrapper>{children}</BodyWrapper>
+  return <BodyWrapper>{children}</BodyWrapper>
 }

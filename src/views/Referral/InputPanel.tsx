@@ -23,21 +23,21 @@ const Field = styled.div`
   }
 `
 
-const InputPanel = () => {
+interface AddressInputProps {
+    onChange: (e: React.FormEvent<HTMLInputElement>) => void
+    value: string
+}
 
-    const [value, setValue] = useState<string | null>(null) // deadline in minutes
+const InputPanel: React.FC<AddressInputProps> = ({ onChange, value }) => {
+
+    // const [value, setValue] = useState<string | null>(null) // deadline in minutes
     const [error, setError] = useState<string | null>(null)
-
-    const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-        const { value: inputValue } = evt.target
-        setValue(inputValue)
-    }
-
     // Updates local storage if value is valid
     useEffect(() => {
         try {
+
             const rawValue = value
-            if (rawValue != null) {
+            if (rawValue !== '') {
                 setError(null)
             } else {
                 setError('Enter a referral address')
@@ -45,7 +45,9 @@ const InputPanel = () => {
         } catch {
             setError('Enter a valid referral address')
         }
+
     }, [value, setError])
+
 
     return (
         <StyledInputPanel>
@@ -55,7 +57,7 @@ const InputPanel = () => {
                 </Text>
             </Label>
             <Field>
-                <Input type="text" value={value} onChange={handleChange} />
+                <Input type="text" value={value} onChange={onChange} />
             </Field>
             {error && (
                 <Text mt="8px" color="failure">

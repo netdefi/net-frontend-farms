@@ -1,5 +1,9 @@
 export type IfoStatus = 'coming_soon' | 'live' | 'finished'
-
+export interface ReferralConfig {
+  partnerAddress: string
+  isRegister: boolean
+  totalChildPartner: number
+}
 export interface Ifo {
   id: string
   isActive: boolean
