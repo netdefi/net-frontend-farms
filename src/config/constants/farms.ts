@@ -5,16 +5,16 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     risk: 5,
+    lpSymbol: 'XTM',
     isTokenOnly: true,
-    lpSymbol: 'MOBILE LP',
     lpAddresses: {
       97: '',
-      56: '0xEB33F0F47b015A59e2a11ef76bc033D2Da096c3E',
+      56: '0x61b009c0405313e6a32d5fa20a3314ac2e25b73c',
     },
-    tokenSymbol: 'MOBILE',
+    tokenSymbol: 'XTM',
     tokenAddresses: {
       97: '',
-      56: '0x2CC6a05e1729e568f69AC3f52Ee89d40747239D2',
+      56: '0xD90eAD48B86955552EC264266CADaecF8e17d6A6',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -22,85 +22,52 @@ const farms: FarmConfig[] = [
   {
     pid: 1,
     risk: 5,
-    lpSymbol: 'USDT-BUSD LP',
+    lpSymbol: 'XTG',
+    isTokenOnly: true,
     lpAddresses: {
       97: '',
-      56: '0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd',
+      56: '0x0e9022fc05bf0f4fc4e56b7300c8d6c32d7f793d',
     },
-    tokenSymbol: 'USDT',
+    tokenSymbol: 'XTG',
     tokenAddresses: {
       97: '',
-      56: '0x55d398326f99059fF775485246999027B3197955',
+      56: '0x3D732cB0BE2CEc26a6F640e9D1845b657c06c367',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
-  },
+  },  
   {
     pid: 2,
-    risk: 3,
-    lpSymbol: 'LINA-BUSD LP',
+    risk: 5,
+    lpSymbol: 'XTM-BUSD LP',    
     lpAddresses: {
       97: '',
-      56: '0xeB325a8ea1c5abf40c7ceAf645596c1F943d0948',
+      56: '0x61b009c0405313e6a32d5fa20a3314ac2e25b73c',
     },
-    tokenSymbol: 'LINA',
+    tokenSymbol: 'XTM',
     tokenAddresses: {
       97: '',
-      56: '0x762539b45A1dCcE3D36d080F74d1AED37844b878',
+      56: '0xD90eAD48B86955552EC264266CADaecF8e17d6A6',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
   {
     pid: 3,
-    risk: 1,
-    lpSymbol: 'MOBILE-BNB LP',
+    risk: 5,
+    lpSymbol: 'XTG-BUSD LP',    
     lpAddresses: {
       97: '',
-      56: '0x9D166cc29ec9660d7c824e51abF14cceAc0578fe',
+      56: '0x0e9022fc05bf0f4fc4e56b7300c8d6c32d7f793d',
     },
-    tokenSymbol: 'MOBILE',
+    tokenSymbol: 'XTG',
     tokenAddresses: {
       97: '',
-      56: '0x2cc6a05e1729e568f69ac3f52ee89d40747239d2',
-    },
-    quoteTokenSymbol: QuoteToken.BNB,
-    quoteTokenAdresses: contracts.wbnb,
-  },
-  {
-    pid: 4,
-    risk: 1,
-    lpSymbol: 'BNB-BUSD LP',
-    lpAddresses: {
-      97: '',
-      56: '0x1B96B92314C44b159149f7E0303511fB2Fc4774f',
-    },
-    tokenSymbol: 'BNB',
-    tokenAddresses: {
-      97: '',
-      56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+      56: '0x3D732cB0BE2CEc26a6F640e9D1845b657c06c367',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
-  },
-
-     {
-    pid: 5,
-    risk: 1,
-    lpSymbol: 'MOBILE-BUSD LP',
-    lpAddresses: {
-      97: '',
-      56: '0xEB33F0F47b015A59e2a11ef76bc033D2Da096c3E',
-    },
-    tokenSymbol: 'MOBILE',
-    tokenAddresses: {
-      97: '',
-      56: '0x2CC6a05e1729e568f69AC3f52Ee89d40747239D2',
-    },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
-  },
-
+  },  
 ]
 
 export default farms

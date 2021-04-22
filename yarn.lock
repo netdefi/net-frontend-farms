@@ -1922,7 +1922,7 @@
 
 "@pancakeswap-libs/uikit@netdefi/net-uikit":
   version "0.10.2"
-  resolved "https://codeload.github.com/netdefi/net-uikit/tar.gz/a720417f40c6134a4eb6a19f9c308e72b36c3d95"
+  resolved "https://codeload.github.com/netdefi/net-uikit/tar.gz/4c8ffbd182d9de75a4ff8b250f9d82dfbc9a74eb"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

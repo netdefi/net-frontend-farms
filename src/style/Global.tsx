@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Kanit', sans-serif;
   }
   body {
-    background-color: ${({ theme }) => theme.colors.background};
-
+    background-image: ${({ theme }) => theme.colors.gradients.magentaTheme};
+  
     img {
       height: auto;
       max-width: 100%;

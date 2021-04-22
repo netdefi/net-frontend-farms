@@ -30,7 +30,7 @@ const config: MenuEntry[] = [
     href: '/farms',
   },
   {
-    label: 'Nests',
+    label: 'Pools',
     icon: 'PoolIcon',
     href: '/nests',
   },
@@ -55,19 +55,19 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'PancakeSwap',
-        href: 'https://pancakeswap.info/token/0xba26397cdff25f0d26e815d218ef3c77609ae7f1',
+        href: 'https://pancakeswap.info/token/0xD90eAD48B86955552EC264266CADaecF8e17d6A6',
       },
-      {
-        label: 'Token',
-        href: 'https://www.coingecko.com/en/coins/net-finance',
-      },
-      {
-        label: 'Contracts',
-        href: 'https://coinmarketcap.com/currencies/net-finance/',
-      },
+      // {
+      //   label: 'Token',
+      //   href: 'https://www.coingecko.com/en/coins/octax-finance',
+      // },
+      // {
+      //   label: 'Contracts',
+      //   href: 'https://coinmarketcap.com/currencies/octax-finance/',
+      // },
       {
         label: 'Transparency',
-        href: 'https://app.astrotools.io/pancake-pair-explorer/0x19e7cbecdd23a16dfa5573df54d98f7caae03019',
+        href: 'https://app.astrotools.io/pancake-pair-explorer/0xD90eAD48B86955552EC264266CADaecF8e17d6A6',
       },
     ],
   },
@@ -77,15 +77,15 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/netdefi/',
+        href: 'https://github.com/octax/',
       },
       {
         label: 'Docs',
-        href: 'https://netdefi-bsc.gitbook.io/docdefi/',
+        href: 'https://octax.gitbook.io/octax/',
       },
       {
         label: 'Blog',
-        href: 'https://netfinance.medium.com/',
+        href: 'https://octax.medium.com/',
       },
     ],
   },

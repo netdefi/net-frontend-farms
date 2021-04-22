@@ -64,7 +64,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
         let apy = cakePrice.times(cakeRewardPerYear);
 
-        let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0);
+        let totalValue =  new BigNumber(farm.lpTotalInQuoteToken || 0);  //
 
         if (farm.quoteTokenSymbol === QuoteToken.BNB) {
           totalValue = totalValue.times(bnbPrice);
@@ -96,13 +96,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {
           tokenMode ?
-            TranslateString(10002, 'Stake tokens to earn Net')
+            TranslateString(10002, 'Stake tokens to earn OctaX')
             :
-          TranslateString(320, 'Stake LP tokens to earn Net')
+          TranslateString(320, 'Stake LP tokens to earn OctaX')
         }
       </Heading>
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback Net')}
+        {TranslateString(10000, 'Deposit Fee will be used to buyback OctaX')}
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly}/>
       <div>

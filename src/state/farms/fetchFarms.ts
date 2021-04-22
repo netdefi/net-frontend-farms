@@ -62,11 +62,15 @@ const fetchFarms = async () => {
       let tokenPriceVsQuote;
       if(farmConfig.isTokenOnly){
         tokenAmount = new BigNumber(lpTokenBalanceMC).div(new BigNumber(10).pow(tokenDecimals));
+
         if(farmConfig.tokenSymbol === QuoteToken.BUSD && farmConfig.quoteTokenSymbol === QuoteToken.BUSD){
           tokenPriceVsQuote = new BigNumber(1);
         }else{
+
+          // console.log("tokenPriceVsQuote", new BigNumber(quoteTokenBlanceLP).toNumber(),new BigNumber(tokenBalanceLP).toNumber())
           tokenPriceVsQuote = new BigNumber(quoteTokenBlanceLP).div(new BigNumber(tokenBalanceLP));
         }
+
         lpTotalInQuoteToken = tokenAmount.times(tokenPriceVsQuote);
 
 
@@ -104,7 +108,7 @@ const fetchFarms = async () => {
 
       }
 
-      const [info, totalAllocPoint, eggPerBlock] = await multicall(masterchefABI, [
+      const [info, totalAllocPoint, XtraMoonPerBlock] = await multicall(masterchefABI, [
         {
           address: getMasterChefAddress(),
           name: 'poolInfo',
@@ -116,7 +120,7 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'eggPerBlock',
+          name: 'XtraMoonPerBlock',
         },
       ])
 
@@ -131,7 +135,7 @@ const fetchFarms = async () => {
         poolWeight: poolWeight.toNumber(),
         multiplier: `${allocPoint.div(100).toString()}X`,
         depositFeeBP: info.depositFeeBP,
-        eggPerBlock: new BigNumber(eggPerBlock).toNumber(),
+        eggPerBlock: new BigNumber(XtraMoonPerBlock).toNumber(),
       })
       return {
         ...farmConfig,
@@ -142,7 +146,7 @@ const fetchFarms = async () => {
         poolWeight: poolWeight.toNumber(),
         multiplier: `${allocPoint.div(100).toString()}X`,
         depositFeeBP: info.depositFeeBP,
-        eggPerBlock: new BigNumber(eggPerBlock).toNumber(),
+        eggPerBlock: new BigNumber(XtraMoonPerBlock).toNumber(),
       }
     }),
   )

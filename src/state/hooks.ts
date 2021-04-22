@@ -96,9 +96,9 @@ export const usePriceCakeBusd = (): BigNumber => {
   // const farm = useFarmFromPid(pid)
   // return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
 
-  const pid = 0; // Net-BUSD LP
+  const pid = 2; // Net-BUSD LP
   const farm = useFarmFromPid(pid);
-  return farm.tokenPriceVsQuote ? new BigNumber(1) : ZERO;
+  return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
 }
 
 export const useTotalValue = (): BigNumber => {
