@@ -22,6 +22,7 @@ export const useFetchPublicData = () => {
 
 export const useFarms = (): Farm[] => {
   const farms = useSelector((state: State) => state.farms.data)
+  console.log("farms",farms)
   return farms
 }
 
@@ -43,6 +44,7 @@ export const useFarmUser = (pid) => {
     tokenBalance: farm.userData ? new BigNumber(farm.userData.tokenBalance) : new BigNumber(0),
     stakedBalance: farm.userData ? new BigNumber(farm.userData.stakedBalance) : new BigNumber(0),
     earnings: farm.userData ? new BigNumber(farm.userData.earnings) : new BigNumber(0),
+    withdrawLastLockDay: farm.userData ? new BigNumber(farm.userData.withdrawLastLockDay) : new BigNumber(0),
   }
 }
 

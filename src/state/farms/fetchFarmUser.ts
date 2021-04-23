@@ -74,3 +74,24 @@ export const fetchFarmUserEarnings = async (account: string) => {
   })
   return parsedEarnings
 }
+
+// ของจริงต้องใส่อันนี้ น่ะ
+export const fetchFarmUserWithdrawLastLockDay = async (account: string) => {
+  const masterChefAdress = getMasterChefAddress()
+
+  const calls = farmsConfig.map((farm) => {
+    return {
+      address: masterChefAdress,
+      name: 'withdrawLastLockDay', // if production replace pendingXtraMoon by withdrawLastLockDay
+      params: [farm.pid, account],
+    }
+  })
+
+  const rawWithdrawLastLockDay = await multicall(masterchefABI, calls)
+
+  const parsedWithdrawLastLockDay = rawWithdrawLastLockDay.map((lockday) => {
+    return lockday?new BigNumber(lockday).toJSON():0
+  })
+
+  return parsedWithdrawLastLockDay
+}

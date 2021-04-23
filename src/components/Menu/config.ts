@@ -16,7 +16,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://master.d7oo7a0o9fxw3.amplifyapp.com/',
+        href: 'https://master.d7oo7a0o9fxw3.amplifyapp.com/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=0xD90eAD48B86955552EC264266CADaecF8e17d6A6',
       },
       {
         label: 'Liquidity',
