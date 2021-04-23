@@ -57,7 +57,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
   const renderApprovalOrStakeButton = () => {
     return isApproved ? (
       <StakeAction stakedBalance={stakedBalance} tokenBalance={tokenBalance} tokenName={lpName} pid={pid} depositFeeBP={depositFeeBP}
-      isLockDay={withdrawLastLockDay.toNumber() > 0}/>
+      isLockDay={withdrawLastLockDay.toNumber() === 0}/>
     ) : (
       <Button mt="8px" fullWidth disabled={requestedApproval} onClick={handleApprove}>
         {TranslateString(999, 'Approve Contract')}
@@ -70,7 +70,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
       <Flex>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="3px">
           {/* TODO: Is there a way to get a dynamic value here from useFarmFromSymbol? */}
-          XTM
+          DRGG
         </Text>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {TranslateString(999, 'Earned')}
@@ -87,10 +87,10 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
       </Flex>
 
       <Flex justifyContent='space-between' pt={2}  pb={2}>
-        <Text bold color="textSubtle" fontSize="12px">
+        <Text bold color="textSubtle" fontSize="14px">
           Withdraw LP after
         </Text>
-        <Text bold color="secondary" fontSize="12px"   >
+        <Text bold color="secondary" fontSize="14px"   >
           {withdrawLastLockDay.toNumber()} Days
         </Text>
 

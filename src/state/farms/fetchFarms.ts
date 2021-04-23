@@ -108,7 +108,7 @@ const fetchFarms = async () => {
 
       }
 
-      const [info, totalAllocPoint, XtraMoonPerBlock] = await multicall(masterchefABI, [
+      const [info, totalAllocPoint, DragonMoonPerBlock] = await multicall(masterchefABI, [
         {
           address: getMasterChefAddress(),
           name: 'poolInfo',
@@ -120,7 +120,7 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'XtraMoonPerBlock',
+          name: 'DragonMoonPerBlock',
         },
       ])
 
@@ -135,7 +135,7 @@ const fetchFarms = async () => {
         poolWeight: poolWeight.toNumber(),
         multiplier: `${allocPoint.div(100).toString()}X`,
         depositFeeBP: info.depositFeeBP,
-        eggPerBlock: new BigNumber(XtraMoonPerBlock).toNumber(),
+        eggPerBlock: new BigNumber(DragonMoonPerBlock).toNumber(),
       })
       return {
         ...farmConfig,
@@ -146,7 +146,7 @@ const fetchFarms = async () => {
         poolWeight: poolWeight.toNumber(),
         multiplier: `${allocPoint.div(100).toString()}X`,
         depositFeeBP: info.depositFeeBP,
-        eggPerBlock: new BigNumber(XtraMoonPerBlock).toNumber(),
+        eggPerBlock: new BigNumber(DragonMoonPerBlock).toNumber(),
       }
     }),
   )
