@@ -5,7 +5,13 @@ const config: MenuEntry[] = [
     label: 'Home',
     icon: 'HomeIcon',
     href: '/',
-  },{
+  },
+  {
+    label: 'Airdrop',
+    icon: 'AirdropIcon',
+    href: '/airdrop',
+  }
+  ,{
     label: 'Referral',
     icon: 'ReferralIcon',
     href: '/referral',
